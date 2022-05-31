@@ -1,0 +1,14 @@
+resources:
+- manifests.yaml
+- service.yaml
+
+patchesJson6902:
+- target:
+    group: admissionregistration.k8s.io
+    kind: ValidatingWebhookConfiguration
+    name: validating-webhook-configuration
+    version: v1
+  path: patch_ns_selector.yaml
+
+configurations:
+- kustomizeconfig.yaml

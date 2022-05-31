@@ -1,0 +1,10 @@
+resources:
+- configuration.yaml
+- manager.yaml
+- metrics_service.yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+images:
+- name: controller
+  newName: quay.io/clastix/capsule
+  newTag: v0.1.2-rc0
